@@ -25,20 +25,16 @@ document
   .addEventListener("click", async () => {
     try {
       const response = await fetch(API_URL);
-
       if (!response.ok) {
         throw new Error("Ошибка запроса: " + response.status);
       }
-
       const station = await response.json();
       console.log("Ответ сервера:", station);
-
       if (!station || typeof station.name !== "string") {
         document.getElementById("station").textContent =
           "Некорректный ответ сервера";
         return;
       }
-
       document.getElementById("station").textContent = station.name;
       labelContainer.classList.remove("hidden");
       errorContainer.classList.add("hidden");
