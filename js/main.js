@@ -16,7 +16,7 @@ updateDate(); // первый вызов при загрузке
 setInterval(updateDate, 60000); // обновление каждую минуту
 
 //API
-const API_URL = "https://localhost:7265/api/metrostations/random";
+const API_URL = "https://api.sbportal.ru/api/metrostations/random";
 const errorContainer = document.querySelector(".metro__error");
 const labelContainer = document.querySelector(".metro__info-label");
 
